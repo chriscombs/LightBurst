@@ -18,7 +18,6 @@
 		279E2CE718512B3900E82947 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279E2CE518512B3900E82947 /* Main_iPad.storyboard */; };
 		279E2CEA18512B3900E82947 /* LBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279E2CE918512B3900E82947 /* LBViewController.m */; };
 		279E2CED18512B3900E82947 /* LBMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 279E2CEC18512B3900E82947 /* LBMyScene.m */; };
-		279E2CEF18512B3900E82947 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 279E2CEE18512B3900E82947 /* Spaceship.png */; };
 		279E2CF118512B3900E82947 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 279E2CF018512B3900E82947 /* Images.xcassets */; };
 		279E2CF818512B3900E82947 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279E2CF718512B3900E82947 /* XCTest.framework */; };
 		279E2CF918512B3900E82947 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279E2CCE18512B3900E82947 /* Foundation.framework */; };
@@ -55,7 +54,6 @@
 		279E2CE918512B3900E82947 /* LBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBViewController.m; sourceTree = "<group>"; };
 		279E2CEB18512B3900E82947 /* LBMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBMyScene.h; sourceTree = "<group>"; };
 		279E2CEC18512B3900E82947 /* LBMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBMyScene.m; sourceTree = "<group>"; };
-		279E2CEE18512B3900E82947 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		279E2CF018512B3900E82947 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		279E2CF618512B3900E82947 /* LightBurstTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightBurstTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		279E2CF718512B3900E82947 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -123,15 +121,14 @@
 		279E2CD618512B3900E82947 /* LightBurst */ = {
 			isa = PBXGroup;
 			children = (
+				279E2D0E185132B800E82947 /* Nodes */,
+				279E2D0D185132B200E82947 /* Scenes */,
+				279E2CE818512B3900E82947 /* LBViewController.h */,
+				279E2CE918512B3900E82947 /* LBViewController.m */,
 				279E2CDF18512B3900E82947 /* LBAppDelegate.h */,
 				279E2CE018512B3900E82947 /* LBAppDelegate.m */,
 				279E2CE218512B3900E82947 /* Main_iPhone.storyboard */,
 				279E2CE518512B3900E82947 /* Main_iPad.storyboard */,
-				279E2CE818512B3900E82947 /* LBViewController.h */,
-				279E2CE918512B3900E82947 /* LBViewController.m */,
-				279E2CEB18512B3900E82947 /* LBMyScene.h */,
-				279E2CEC18512B3900E82947 /* LBMyScene.m */,
-				279E2CEE18512B3900E82947 /* Spaceship.png */,
 				279E2CF018512B3900E82947 /* Images.xcassets */,
 				279E2CD718512B3900E82947 /* Supporting Files */,
 			);
@@ -165,6 +162,22 @@
 				279E2D0018512B3900E82947 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		279E2D0D185132B200E82947 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				279E2CEB18512B3900E82947 /* LBMyScene.h */,
+				279E2CEC18512B3900E82947 /* LBMyScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		279E2D0E185132B800E82947 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +228,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = chriscombs;
 				TargetAttributes = {
+					279E2CCA18512B3900E82947 = {
+						DevelopmentTeam = QC92DKAT7S;
+					};
 					279E2CF518512B3900E82947 = {
 						TestTargetID = 279E2CCA18512B3900E82947;
 					};
@@ -244,7 +260,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				279E2CEF18512B3900E82947 /* Spaceship.png in Resources */,
 				279E2CF118512B3900E82947 /* Images.xcassets in Resources */,
 				279E2CE718512B3900E82947 /* Main_iPad.storyboard in Resources */,
 				279E2CE418512B3900E82947 /* Main_iPhone.storyboard in Resources */,
@@ -407,10 +422,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LightBurst/LightBurst-Prefix.pch";
 				INFOPLIST_FILE = "LightBurst/LightBurst-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -421,10 +439,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LightBurst/LightBurst-Prefix.pch";
 				INFOPLIST_FILE = "LightBurst/LightBurst-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};

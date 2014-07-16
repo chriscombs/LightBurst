@@ -17,8 +17,6 @@
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
     
     // Create and configure the scene.
     SKScene * scene = [LBMyScene sceneWithSize:skView.bounds.size];
@@ -40,6 +38,10 @@
     } else {
         return UIInterfaceOrientationMaskAll;
     }
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning

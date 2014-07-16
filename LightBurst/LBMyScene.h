@@ -8,6 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface LBMyScene : SKScene
+@interface LBMyScene : SKScene <SKPhysicsContactDelegate>
+
+@property (nonatomic, strong) NSMutableArray *nodeArray;
 
 @end
